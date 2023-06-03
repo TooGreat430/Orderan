@@ -1,0 +1,599 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #f8ecec;
+    position: relative;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    height: 75px;
+    justify-content: space-between;
+    padding: 0px 40px;
+    border-bottom: 2px solid;
+}
+
+#profile{
+    position: relative;
+    padding: 0 10px;
+}
+
+#dropdownmenu{
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 5px 0;
+    border-radius: 10px;
+}
+
+#dropdownmenu input, #dropdownmenu a{
+    display: flex;
+    text-decoration: none;
+    border: 0;
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+}
+
+#dropdownmenu a{
+    text-align: center;
+    justify-content: center;
+}
+
+#dropdownmenu input{
+    width: 100%;
+}
+
+#dropdownmenu input:hover, #dropdownmenu a:hover{
+    cursor: pointer;
+    background-color: #d3d3d3;
+}
+
+#profile:hover #dropdownmenu{
+    display: flex;
+}
+
+#content{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#shops, #shopshistory{
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    margin-bottom: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#menu{
+    width: 500px;
+    background-color: #d3d3d3;
+    border-radius: 20px;
+}
+
+#shoppic, #foodpic, #shoppichis{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#foodpic{
+    height: 100px;
+    width: 100px;
+}
+
+#shoppiccontainer, #foodpiccontainer, #shoppiccontainerhis{
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+    position: relative;
+    background-color: gray;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#foodpiccontainer{
+    height: 100px;
+    width: 100px;
+}
+
+#categories{
+    display: block;
+    background-color: #d3d3d3;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+
+#categorycontainer{
+    display: flex;
+}
+
+#shopname{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#catform{
+    display: flex;
+}
+
+#category{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+#category li{
+    padding: 0 5px;
+}
+
+#registform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 50px;
+    padding-top: 0;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+#registform label{
+    margin-top: 50px;
+    width: 300px;
+}
+
+#registform input{
+    width: 100%;
+}
+
+#registform input[type=submit]{
+    width: 100px;
+    margin-top: 50px;
+}
+
+#formshopbtn{
+    display: flex;
+    margin-top: 30px;
+    height: 30px;
+    position: relative;
+}
+
+#shopbtn{
+    margin-right: 20px;
+    height: 100%;
+}
+
+#menuitem{
+    display: flex;
+    border-top: 1px solid;
+    /* border-radius: 20px; */
+}
+
+#foodstatcontainer{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#itemname{
+    font-size: 20px;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+#itemdesc{
+    font-size: 12px;
+    overflow: hidden;
+    height: 50px;
+    width: 340px;
+}
+
+#hargadanbtn{
+    display: flex;
+    width: 340px;
+    justify-content: space-between;
+}
+
+#notavailable{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px solid;
+}
+
+#backbtn, #keranjanglink{
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+#backbtn{
+    position: absolute;
+    left: 30px;
+    top: 100px;
+}
+
+#backbtn:hover, #keranjanglink:hover{
+    background-color: #d3d3d3;
+}
+
+#keranjanglink{
+    position: static;
+}
+
+#keranjang{
+    position: relative;
+}
+
+#buletan{
+    width: 14px;
+    height: 14px;
+    background-color: red;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    border-radius: 200px;
+}
+
+#cartcontainer{
+    padding-top: 30px;
+    width: 500px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    flex-direction: column;
+}
+
+#cartcontainer p{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#cartitem{
+    display: flex;
+}
+
+#cartfoot, #pushorderbtn{
+    padding: 0 30px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#pushorderbtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+#usercontainer{
+    padding: 0 30px;
+}
+
+#alamat{
+    display: flex;
+    padding: 0 30px;
+    padding-bottom: 20px;
+}
+
+#alamat input{
+    margin-left: 10px;
+    width: 300px;
+    height: 40px;
+}
+
+#cartshop{
+    padding: 0 30px;
+    padding-bottom: 20px;
+}
+
+#emaildisplay{
+    box-shadow:0px 0px 0px 1px black inset;
+    padding: 3px;
+    width: 100%;
+    background-color: #d3d3d3;
+}
+
+#changeandpass{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#changeandpass button{
+    margin-top: 50px;
+    height: 100%;
+}
+
+.overlay{
+    position: absolute;
+}
+
+#changepassconf{
+    margin-top: 50px;
+}
+
+#cancelbutton{
+    margin-top: 50px;
+}
+
+#orderlist, #orderdetail{
+    background-color: white;
+    width: 500px;
+    padding: 30px 50px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#totalndate{
+    display: flex;
+    justify-content: space-between;
+}
+
+#orderlistcontainer{
+    padding-bottom: 10px;
+    border-bottom: 3px solid;
+}
+
+#viewalamat{
+    display: flex;
+}
+
+#alamatbox{
+    width: 400px;
+    height: 50px;
+    border: 1px solid;
+    background-color: #d3d3d3;
+    padding: 5px 15px;
+    margin-left: 10px;
+}
+
+#ordersum{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#odcontainertitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#notes{
+    width: 400px;
+    height: 50px;
+    font-size: 15px;
+    color: gray;
+}
+
+#orderdetailcontainer{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid;
+}
+
+#oddetailfoot{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+#finishbtn{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+#guestbtn{
+    padding: 7px 20px;
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+#guestbtn:hover{
+    background-color: #d3d3d3;
+}
+
+#orderlist h2{
+    display: flex;
+    justify-content: center;
+}
+
+#categoriescontent{
+    background-color: white;
+    width: 500px;
+    padding: 30px 50px;
+    border-radius: 20px;
+    position: relative;
+}
+
+#catlistcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+}
+
+#catlistcontainer button{
+    margin-left: 10px;
+}
+
+#newcat, #changecat{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: white;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#newcatbtncont{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+#newcatbtncont input{
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+
+#history{
+    width: 500px;
+    background-color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+}
+
+#historydesc{
+    width: 400px;
+}
+
+#pricenrate{
+    display: flex;
+    justify-content: space-between;
+}
+
+#shopshistory{
+    border-radius: 0;
+    border-bottom: 1px solid;
+    margin-bottom: 0;
+    position: relative;
+}
+
+#historydesc h2{
+    margin: 0;
+}
+
+#shoppiccontainerhis{
+    margin-left: 0;
+}
+
+#rateoverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: white;
+}
+
+#rateoverlay form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#rateoverlay form div{
+    margin-bottom: 20px;
+    display: flex;
+}
+
+#rateoverlay form div input{
+    margin-left: 5px;
+}
+
+#comment{
+    margin-left: 5px;
+    width: 300px;
+    height: 70px;
+}
+
+#seperator{
+    height: 30px;
+}
+
+#gridview{
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+    background-color: white;
+    padding: 30px;
+}
+
+#itemlistgrid{
+    border: 2px black solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+#itemlistgrid > h1{
+    margin-top: 0;
+}
+
+#changemenucont{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.205);
+}
+
+.overlayitem{
+    padding: 30px !important;
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    margin-top: 0px !important;
+}
+
+.overlayitem > label{
+    margin-top: 10px !important;
+}
+
+#formcancelbtn{
+    position: absolute;
+    left: 50%;
+    top: 680px;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#itemdesctextarea{
+    width: 100%;
+    resize: none;
+}
+
+#edititemconfirm{
+    margin-top: 30px;
+}
