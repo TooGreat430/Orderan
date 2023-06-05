@@ -3,7 +3,7 @@
     session_start();
 
     //check role -> if incorrect redirect
-    if(!(isset($_SESSION["userid"]) OR $_SESSION["userid"]==true OR $_SESSION["RoleID"]!=3)){
+    if(!(isset($_SESSION["userid"]) OR $_SESSION["userid"]==true OR $_SESSION["RoleID"]==3)){
         header("Location: Login.php");
         exit;
     }else{
@@ -120,8 +120,30 @@
         header("Location: Manageitems.php");
     }
 
-    if(isset($_POST['additem'])){
-        
+    if(isset($_GET['additem'])){
+        echo '<div id="changemenucont">';
+        echo '<form id="registform" class="overlayitem" method="post">';
+        echo '<input type="file" name="menupict" accept="image/png, image/gif, image/jpeg" />';
+        echo '<label for="itemname">Item Name:</label>
+        <input type="text" name="itemname">';
+        if($tooshort){
+            echo 'Item Name too short! (min 5 chars)';    
+        }
+        echo '<label for="itemdesc">Description:</label>
+        <textarea id="itemdesctextarea" name="itemdesc"></textarea>';
+        if($desctooshort){
+            echo 'Item Description too short (min 20 chars)';
+        }
+        echo '<label for="itemprice">Item Price:</label>
+        <input type="text" name="itemprice">';
+        if($pricenotnumber){
+            echo "Please put item price in numbers only!";     
+        }
+        echo '<div id="addmenuconfbtn">';
+        echo '<button type="submit" name="additembtn" value="cancel" id="additembtn">Cancel</button>';
+        echo '<button type="submit" name="additembtn" value="add" id="additembtn">Add Item</button>';
+        echo '</div>';
+        echo '</div>';
     }
 ?>
 
@@ -131,11 +153,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniEat</title>
+    <title>Orderan</title>
 </head>
 <body>
     <header>
-        <div id="logo">UniEat</div>
+        <div id="logo">Orderan</div>
         <form id="searchbar" method="post">
             <input type="text" id="searchbar" name='searchbar'>
             <input type="submit" name="search" value="search"></input>
@@ -161,7 +183,7 @@
     </header>
     <div id="content">
         <div class="additemcont">
-            <form action="POST">
+            <form>
                 <input type="submit" name="additem" value="Add Item">
             </form>
         </div>

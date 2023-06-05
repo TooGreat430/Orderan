@@ -14,11 +14,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniEat</title>
+    <title>Orderan</title>
 </head>
 <body>
     <header>
-        <div id="logo">UniEat</div>
+        <div id="logo">Orderan</div>
         <form id="searchbar" method="post">
             <input type="text" id="searchbar" name='searchbar'>
             <input type="submit" name="search" value="search"></input>
