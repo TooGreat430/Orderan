@@ -597,3 +597,35 @@ header{
 #edititemconfirm{
     margin-top: 30px;
 }
+
+* > form{
+    margin-bottom: 0;
+}
+
+.manageitemcancel{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirmationoverlay{
+    position: absolute;
+    display: flex;
+    padding: 30px !important;
+    top: 400px;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 3;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.additemcont{
+    width: 80%;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}

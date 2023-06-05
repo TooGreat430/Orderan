@@ -82,10 +82,46 @@
         }
         echo '<button type="submit" name="confirmbtn" value="confirm" id="edititemconfirm">Confirm</button>';
         echo '</form>';
-        echo '<form id="formcancelbtn">';
+        echo '<form id="formcancelbtn" class="manageitemcancel" method="post">';
         echo '<input type="submit" name="cancelbutton" value="Cancel">';
+        echo '<input type="submit" name="removebutton" value="Remove">';
         echo '</form>';
         echo '</div>';
+    }
+
+    if(isset($_POST['cancelbutton'])){
+        unset($_GET['editbtn']);
+        header("Location: Manageitems.php");
+    }
+
+    if(isset($_POST['removebutton'])){
+        echo '<div id="changemenucont">';
+        echo '<div class="confirmationoverlay">';
+        echo '<p> Are you sure you want to delete ';
+        echo $selecteditem['ItemName'];
+        echo ' ?</p>';
+        echo '<form id="confirmationform" class="manageitemcancel" method="post">';
+        echo '<input type="submit" name="confirmbtn" value="Cancel">';
+        echo '<input type="submit" name="confirmbtn" value="Remove">';
+        echo '</form>';
+        echo '</div>';
+        echo '</div>';
+    }
+
+    if(@$_POST['confirmbtn'] == 'Cancel'){
+        unset($_POST['cancelbutton']);
+        if(isset($selecteditem['ItemID'])){
+            header("Location: Manageitems.php?editbtn=".$selecteditem['ItemID']);
+        }
+    }else if(@$_POST['confirmbtn'] == 'Remove'){
+        $query=mysqli_query($conn, "UPDATE item SET ItemAvailability='0' WHERE ItemID LIKE '".$selecteditem['ItemID']."'");
+        unset($_GET['editbtn']);
+        unset($_POST['cancelbutton']);
+        header("Location: Manageitems.php");
+    }
+
+    if(isset($_POST['additem'])){
+        
     }
 ?>
 
@@ -124,8 +160,13 @@
         </div>
     </header>
     <div id="content">
+        <div class="additemcont">
+            <form action="POST">
+                <input type="submit" name="additem" value="Add Item">
+            </form>
+        </div>
         <?php
-        $query="SELECT * FROM item i WHERE i.ShopID LIKE '".$_SESSION['yourshop']['ShopID']."'";
+        $query="SELECT * FROM item i WHERE i.ShopID LIKE '".$_SESSION['yourshop']['ShopID']."' AND i.ItemAvailability='1'";
 
         if(isset($_POST['search']) AND $_POST['searchbar']!=''){
             $query=$query."AND LOWER(i.ItemName) LIKE '".strtolower($_POST['searchbar'])."%'";
