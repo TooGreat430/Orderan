@@ -13,6 +13,8 @@
 
     if(isset($_POST['logout'])){
         session_destroy();
+        session_start();
+        $_SESSION['formstep']='2';
         header("Location: Login.php");
         exit;
     }

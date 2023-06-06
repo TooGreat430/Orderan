@@ -14,6 +14,8 @@
 
     if(isset($_POST['logout'])){
         session_destroy();
+        session_start();
+        $_SESSION['formstep']='2';
         header("Location: Login.php");
         exit;
     }
@@ -123,7 +125,7 @@
     if(isset($_GET['additem'])){
         echo '<div id="changemenucont">';
         echo '<form id="registform" class="overlayitem" method="post">';
-        echo '<input type="file" name="menupict" accept="image/png, image/gif, image/jpeg" />';
+        echo '<input type="file" name="menupict" accept="image/png, image/jpeg" />';
         echo '<label for="itemname">Item Name:</label>
         <input type="text" name="itemname">';
         if($tooshort){

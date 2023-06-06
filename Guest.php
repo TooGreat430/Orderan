@@ -14,6 +14,15 @@
         $_SESSION['ratingtosee']=$_POST['ratingbtn'];
         header("Location: Viewratingsguest.php");
     }
+
+    if(isset($_GET['form'])){
+        if($_GET['form']==1){
+            $_SESSION['formstep']='1';
+        }else if($_GET['form']==2){
+            $_SESSION['formstep']='2';
+        }
+        header("Location: Login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -33,8 +42,8 @@
         </form>
         
         <div id="akun">
-            <a href="Register.php" id="guestbtn">Register</a>
-            <a href="Login.php" id="guestbtn">Login</a>
+            <a href="Guest.php?form=1" id="guestbtn">Register</a>
+            <a href="Guest.php?form=2" id="guestbtn">Login</a>
         </div>
     </header>
     <div id="content">

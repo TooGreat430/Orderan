@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body{
     padding: 0;
     margin: 0;
@@ -635,4 +637,13 @@ header{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+}
+
+.loginback{
+    margin-bottom: 50px;
+}
+
+.loginback > img{
+    width: 300px;
+    object-fit: contain;
 }

@@ -25,8 +25,8 @@
         </form>
 
         <div id="akun">
-            <a href="Register.php" id="guestbtn">Register</a>
-            <a href="Login.php" id="guestbtn">Login</a>
+            <a href="Guest.php?form=1" id="guestbtn">Register</a>
+            <a href="Guest.php?form=2" id="guestbtn">Login</a>
         </div>
     </header>
     <div id="content">
