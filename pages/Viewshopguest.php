@@ -48,7 +48,7 @@
             //warning: code dibawah ini bikin mual
             echo '<div id="shops">
                 <div id="shoppiccontainer">
-                <img id="shoppic" src="shoppictures/'.$shop['ShopID'].'.png" alt="LOGO">
+                <img id="shoppic" src="../shoppictures/'.$shop['ShopID'].'.png" alt="LOGO">
                 </div>
                 <div id="shopdesc">
                 <div id="shopname">'.$shop['ShopName'].'</div>
@@ -75,7 +75,7 @@
                 echo '<div id="menuitem">';
 
                 echo '<div id="foodpiccontainer">';
-                echo '<img id="foodpic" src=foodpictures/'.$d['ItemID'].'.png alt="FoodPic">';
+                echo '<img id="foodpic" src="../foodpictures/'.$d['ItemID'].'.png" alt="FoodPic">';
                 echo '</div>';
 
                 echo '<div id="foodstatcontainer">';

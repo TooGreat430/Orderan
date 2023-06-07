@@ -119,7 +119,7 @@
                         }
                     }
 
-                    echo '<div id="shoppiccontainerhis"><img id="shoppichis" src="shoppictures/'.$d['ShopID'].'.png" alt="LOGO">';
+                    echo '<div id="shoppiccontainerhis"><img id="shoppichis" src="../shoppictures/'.$d['ShopID'].'.png" alt="LOGO">';
                     echo '</div>';
                     echo '<div id="historydesc">';
                     echo '<h2>'.$d['ShopName'].'</h2>';

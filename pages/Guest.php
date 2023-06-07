@@ -86,7 +86,7 @@
             $rating=mysqli_query($conn, "SELECT AVG(RatingScore) as averagescore FROM orderheader od JOIN shop s ON od.ShopID=s.ShopID WHERE s.ShopID LIKE '".$d['ShopID']."' AND OrderStatus=2")->fetch_assoc()['averagescore'];
 
             echo '<div id="shops">'.
-            '<div id="shoppiccontainer"><img id="shoppic" src="shoppictures/'.$d['ShopID'].'.png" alt="LOGO"></div>';
+            '<div id="shoppiccontainer"><img id="shoppic" src="../shoppictures/'.$d['ShopID'].'.png" alt="LOGO"></div>';
             echo '<div id="shopdesc">';
             echo '<div id="shopname">'.$d['ShopName'].'</div>';
             echo '<div id="categorycontainer">';

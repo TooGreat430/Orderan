@@ -81,7 +81,7 @@
                     $d=$d->fetch_assoc();
                     echo '<div id="shopshistory">';
                     
-                    echo '<div id="shoppiccontainerhis"><img id="shoppichis" src="shoppictures/'.$d['ShopID'].'.png" alt="LOGO">';
+                    echo '<div id="shoppiccontainerhis"><img id="shoppichis" src="../shoppictures/'.$d['ShopID'].'.png" alt="LOGO">';
     
                     echo '</div>';
                     echo '<div id="historydesc">';

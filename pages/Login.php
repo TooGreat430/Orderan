@@ -109,7 +109,7 @@
         <div class="container">
             <div class="form-box">
                 <a href="Guest.php" id="backbtnlogin" class="loginback">
-                    <img src="pictures/logo-revisi1.png" alt="">
+                    <img src="../pictures/logo-revisi1.png" alt="">
                 </a>
                 <h1 id="title">Sign Up</h1>
                 <form method="POST" id='loginregisform'>

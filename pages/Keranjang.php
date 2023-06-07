@@ -177,7 +177,7 @@
                         echo '<div id="cartitem">';
 
                         echo '<div id="foodpiccontainer">';
-                        echo '<img id="foodpic" src=foodpictures/'.$query['ItemID'].'.png alt="FoodPic">';
+                        echo '<img id="foodpic" src="../foodpictures/'.$query['ItemID'].'.png" alt="FoodPic">';
                         echo '</div>';
 
                         echo '<div id="foodstatcontainer">';

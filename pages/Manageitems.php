@@ -66,7 +66,7 @@
     if(isset($_GET['editbtn'])){
         echo '<div id="changemenucont">';
         echo '<form id="registform" class="overlayitem" method="post">';
-        echo '<div id="shoppiccontainer"><img id="shoppic" src="foodpictures/'.$selecteditem['ItemID'].'.png" alt="LOGO"></div>';
+        echo '<div id="shoppiccontainer"><img id="shoppic" src="../foodpictures/'.$selecteditem['ItemID'].'.png" alt="LOGO"></div>';
         echo '<label for="itemname">Item Name:</label>
         <input type="text" name="itemname" placeholder="'.$selecteditem['ItemName'].'">';
         if($tooshort){
@@ -202,7 +202,7 @@
         if(mysqli_num_rows($query)!=0){
             while ($d=$query->fetch_assoc()){
                 echo '<div id="itemlistgrid">';
-                echo '<div id="shoppiccontainer"><img id="shoppic" src="foodpictures/'.$d['ItemID'].'.png" alt="LOGO"></div>';
+                echo '<div id="shoppiccontainer"><img id="shoppic" src="../foodpictures/'.$d['ItemID'].'.png" alt="LOGO"></div>';
                 echo '<h1>'.$d['ItemName'].'</h1>';
                 if($d['ItemDescription']!=null){
                     echo '<p>'.$d['ItemDescription'].'</p>';

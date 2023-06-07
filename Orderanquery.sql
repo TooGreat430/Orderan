@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2023 at 02:51 AM
+-- Generation Time: Jun 07, 2023 at 01:31 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Orderan`
+-- Database: `orderan`
 --
 
 -- --------------------------------------------------------
@@ -290,7 +290,8 @@ INSERT INTO `user` (`UserID`, `UserEmail`, `UserUsername`, `UserPassword`, `User
 (14, 'Julius@Enterkomputer.com', 'Julius Juli', '$2y$10$YN4NWwWwD5qAxE75B6G8JuR57p1ZtSJEpN53REJVFLmIN42ry4WQ.', '+3001231902478', 2),
 (15, 'Feli@terserah.co.id', 'Feliiiiiiiiiii', '$2y$10$qdHIGNoLU53bX7hWWV9RXO1kK4xn/d7K6roYa94ybs5Oc6yGCxrpq', '+1234901745221', 2),
 (16, 'SiapaAjaDah@IniItu.Sini.Situ', 'Customer Misterius', '$2y$10$zXnrClodr6vxDJpGSiueK.YOIgsfl/KaQ34pUZoHMMWfl8oD2j8E.', '+12591750215890', 2),
-(17, 'pickup@test.com', 'pickupper', '12345', '082123123929', 5);
+(17, 'pickup@test.com', 'pickupper', '12345', '082123123929', 5),
+(18, 'test@test.com', 'dummybuyerA', '$2y$10$PbZL79MJuVXBM.IE9V7mmuz9wemvCIFhf911qim1DsiOaPrEiVEvC', '08123120371283', 2);
 
 --
 -- Indexes for dumped tables
@@ -390,7 +391,7 @@ ALTER TABLE `shop`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables

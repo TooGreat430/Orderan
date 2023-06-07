@@ -3,7 +3,7 @@
     session_start();
 
     //check role -> if incorrect redirect
-    if(!(isset($_SESSION["userid"]) OR $_SESSION["userid"]==true OR $_SESSION["RoleID"]==2)){
+    if(!(isset($_SESSION["userid"]) OR $_SESSION["userid"]==true OR $_SESSION["RoleID"]==4)){
         header("Location: Login.php");
         exit;
     }
@@ -14,22 +14,6 @@
         $_SESSION['formstep']='2';
         header("Location: Login.php");
         exit;
-    }
-
-    if(isset($_POST['shopbtn'])){
-        $query=mysqli_query($conn, "SELECT * FROM shop WHERE ShopID LIKE '".$_POST['shopbtn']."'");
-        $_SESSION['ShopID']=$query->fetch_assoc()['ShopID'];
-
-        header("Location: Viewshopcustomer.php");
-    }
-
-    if(!isset($_SESSION['cart'])){
-        $_SESSION['cart']=array(array("itemid"=>'0', "quantity"=>'0'));
-    }
-
-    if(isset($_POST['ratingbtn'])){
-        $_SESSION['ratingtosee']=$_POST['ratingbtn'];
-        header("Location: Viewratings.php");
     }
 ?>
 
@@ -48,33 +32,16 @@
             <input type="text" id="searchbar" name='searchbar'>
             <input type="submit" name="search" value="search"></input>
         </form>
-        
-        <div id="keranjang">
-            <a href="Keranjang.php" id="keranjanglink">Keranjang</a>
-            <?php
-                $adaisi=false;
-                foreach($_SESSION['cart'] as $x=>$val){
-                    if($val['itemid']!=0){
-                        $adaisi=true;
-                        break;
-                    }
-                }
 
-                if($adaisi){
-                    echo'<div id="buletan"></div>';
-                }
-            ?>
-        </div>
-        
         <div id="profile">
             <?php
-                echo $_SESSION['user']['UserUsername'];
+            echo $_SESSION['user']['UserUsername'];
             ?>
             <div id="dropdownmenu">
-                <form method="post">
-                    <a href="customer.php">Home</a>
-                    <a href="cushistory.php">History</a>
-                    <a href="customersetting.php">Settings</a>
+                <form action="" method="post">
+                    <a href="Admin.php">Home</a>
+                    <a href="">Manage Admin</a>
+                    <a href="Managecategories.php">Manage Categories</a>
                     <input type="submit" value="Logout" name="logout">
                 </form>
             </div>
@@ -117,10 +84,8 @@
                 JOIN category c ON sc.CategoryID=c.CategoryID
                 WHERE s.ShopID=".$d['ShopID']);
 
-                $rating=mysqli_query($conn, "SELECT TRUNCATE(AVG(RatingScore), 1) as averagescore FROM orderheader od JOIN shop s ON od.ShopID=s.ShopID WHERE s.ShopID LIKE '".$d['ShopID']."' AND OrderStatus=2 AND RatingScore!=0")->fetch_assoc()['averagescore'];
-
                 echo '<div id="shops">'.
-                '<div id="shoppiccontainer"><img id="shoppic" src="shoppictures/'.$d['ShopID'].'.png" alt="LOGO"></div>';
+                '<div id="shoppiccontainer"><img id="shoppic" src="../shoppictures/'.$d['ShopID'].'.png" alt="LOGO"></div>';
                 echo '<div id="shopdesc">';
                 echo '<div id="shopname">'.$d['ShopName'].'</div>';
                 echo '<div id="categorycontainer">';
@@ -130,10 +95,6 @@
                     echo '</div>';
                 }
                 echo '</div>';
-                echo '<form id="formshopbtn" method="post">';
-                echo '<button name="shopbtn" id="shopbtn" type="submit" value="'.$d['ShopID'].'">Order</button>';
-                echo '<button name="ratingbtn" id="shopbtn" type="submit" value="'.$d['ShopID'].'">Ratings: '.$rating.'</button>';
-                echo '</form>';
                 echo '</div>';
                 echo '</div>' ;
         }
