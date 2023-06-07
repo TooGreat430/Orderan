@@ -120,7 +120,7 @@
                         </div>
                         <div class="input-field" id="email">
                             <i class="fa-solid fa-envelope"></i>
-                            <input id='email' type="email" placeholder="Email">
+                            <input name='email' type="email" placeholder="Email">
                         </div>
                         <div class="input-field" id="phone">
                             <i class="fa-solid fa-phone"></i>
