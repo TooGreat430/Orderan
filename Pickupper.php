@@ -45,7 +45,7 @@
             ?>
             <div id="dropdownmenu">
                 <form action="" method="post">
-                    <a href="Tenant.php">Home</a>
+                    <a href="Pickupper.php">Home</a>
                     <a href="Completedorderpickupper.php">Completed Orders</a>
                     <input type="submit" value="Logout" name="logout">
                 </form>

@@ -42,10 +42,8 @@
             ?>
             <div id="dropdownmenu">
                 <form action="" method="post">
-                    <input type="submit" value="Home" name="home">
-                    <input type="submit" value="Completed Orders" name="completedorder">
-                    <input type="submit" value="Manage Items" name="manageitem">
-                    <input type="submit" value="Settings" name="settings">
+                    <a href="Pickupper.php">Home</a>
+                    <a href="Completedorderpickupper.php">Completed Orders</a>
                     <input type="submit" value="Logout" name="logout">
                 </form>
             </div>

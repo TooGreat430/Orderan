@@ -91,6 +91,8 @@
                 }else if($d['OrderStatus']==0){
                     echo '<p>The order is cancelled</p>';
                 }else if($d['OrderStatus']==2){
+                    echo '<p>The order is currently being sent</p>';
+                }else if($d['OrderStatus']==3){
                     echo '<p>Done</p>';
                 }
                 

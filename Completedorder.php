@@ -54,7 +54,7 @@
                 <form action="" method="post">
                     <a href="Tenant.php">Home</a>
                     <a href="Completedorder.php">Completed Orders</a>
-                    <input type="submit" value="Manage Items" name="manageitem">
+                    <a href="Manageitems.php">Manage Items</a>
                     <a href="Tenantsetting.php">Settings</a>
                     <input type="submit" value="Logout" name="logout">
                 </form>
