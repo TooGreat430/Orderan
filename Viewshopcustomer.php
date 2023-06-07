@@ -166,7 +166,7 @@
             </div>';
 
             //menunya
-            $menu=mysqli_query($conn, "SELECT * FROM shop s JOIN item i ON s.ShopID=i.ShopID WHERE s.ShopID LIKE '".$shop['ShopID']."'");
+            $menu=mysqli_query($conn, "SELECT * FROM shop s JOIN item i ON s.ShopID=i.ShopID WHERE s.ShopID LIKE '".$shop['ShopID']."' AND i.ItemAvailability='1'");
 
             if(mysqli_num_rows($menu)==0){
                 echo '<div id="notavailable">';
